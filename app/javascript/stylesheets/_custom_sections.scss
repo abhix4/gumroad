@@ -12,7 +12,7 @@
 .custom-sections {
   &>* {
     position: relative;
-    padding-top: 64px;
+    padding-top: spacer(8);
 
     >[role="toolbar"] {
       display: flex;
