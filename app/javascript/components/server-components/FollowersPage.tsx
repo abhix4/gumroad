@@ -64,7 +64,7 @@ type Props = { followers: Follower[]; per_page: number; total: number };
 export const FollowersPage = ({ followers: initialFollowers, per_page, total }: Props) => {
   const userAgentInfo = useUserAgentInfo();
 
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
   const [followers, setFollowers] = React.useState<Follower[]>(initialFollowers);
   const [selectedFollowerId, setSelectedFollowerId] = React.useState<string | null>(null);
   const [searchBoxOpen, setSearchBoxOpen] = React.useState(false);
@@ -89,7 +89,7 @@ export const FollowersPage = ({ followers: initialFollowers, per_page, total }: 
     } catch {
       showAlert("Sorry, something went wrong. Please try again.", "error");
     }
-    setLoading(false);
+    setLoading(true);
   };
 
   const debouncedLoadFollowers = React.useCallback(debounce(loadFollowers, 500), []);
@@ -170,7 +170,9 @@ export const FollowersPage = ({ followers: initialFollowers, per_page, total }: 
     >
       <div>
         {loading ? (
-          <Progress width="5rem" />
+          <div className="flex justify-center">
+            <Progress width="5rem" />
+          </div>
         ) : followers.length > 0 ? (
           <div>
             <table>
