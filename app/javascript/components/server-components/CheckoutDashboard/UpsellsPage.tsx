@@ -207,11 +207,11 @@ const UpsellsPage = (props: {
             onToggle={setIsSearchPopoverOpen}
             aria-label="Search"
             trigger={
-               <WithTooltip tip="Search" position="bottom">
-                             <div className="button">
-                               <Icon name="solid-search" />
-                             </div>
-                           </WithTooltip>
+              <WithTooltip tip="Search" position="bottom">
+                <div className="button">
+                  <Icon name="solid-search" />
+                </div>
+              </WithTooltip>
             }
           >
             <div className="input">
