@@ -38,6 +38,7 @@ import { useDebouncedCallback } from "$app/components/useDebouncedCallback";
 import { Sort, useSortingTableDriver } from "$app/components/useSortingTableDriver";
 
 import placeholder from "$assets/images/placeholders/upsells.png";
+import { WithTooltip } from "$app/components/WithTooltip";
 
 type Variant = {
   id: string;
@@ -206,9 +207,11 @@ const UpsellsPage = (props: {
             onToggle={setIsSearchPopoverOpen}
             aria-label="Search"
             trigger={
-              <div className="button">
-                <Icon name="solid-search" />
-              </div>
+               <WithTooltip tip="Search" position="bottom">
+                             <div className="button">
+                               <Icon name="solid-search" />
+                             </div>
+                           </WithTooltip>
             }
           >
             <div className="input">

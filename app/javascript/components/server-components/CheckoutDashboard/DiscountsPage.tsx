@@ -39,6 +39,7 @@ import { useUserAgentInfo } from "$app/components/UserAgent";
 import { useSortingTableDriver, Sort } from "$app/components/useSortingTableDriver";
 
 import placeholder from "$assets/images/placeholders/discounts.png";
+import { WithTooltip } from "$app/components/WithTooltip";
 
 type Product = {
   id: string;
@@ -287,9 +288,11 @@ const DiscountsPage = ({
             onToggle={setIsSearchPopoverOpen}
             aria-label="Search"
             trigger={
-              <div className="button">
-                <Icon name="solid-search" />
-              </div>
+                <WithTooltip tip="Search" position="bottom">
+                <div className="button">
+                  <Icon name="solid-search" />
+                </div>
+              </WithTooltip>
             }
           >
             <div className="input">
