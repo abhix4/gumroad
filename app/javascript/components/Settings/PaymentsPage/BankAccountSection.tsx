@@ -939,7 +939,7 @@ const BankAccountSection = ({
         </fieldset>
         <div style={{ display: "grid", gap: "var(--spacer-2)" }}>
           {showNewBankAccount ? (
-            <div className="grid gap-5 grid-flow-row md:grid-flow-col auto-cols-fr">
+            <div className="grid gap-5 md:grid-flow-col md:auto-cols-fr">
               {user.country_code === "CA" ? (
                 <>
                   <fieldset className={cx({ danger: errorFieldNames.has("transit_number") })}>
