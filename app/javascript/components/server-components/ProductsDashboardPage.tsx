@@ -46,33 +46,31 @@ export const ProductsDashboardPage = ({
       archivedTabVisible={enableArchiveTab}
       ctaButton={
         <>
-          {
-            products.length > 0 ? (
-              <Popover
-                open={isSearchPopoverOpen}
-                onToggle={setIsSearchPopoverOpen}
-                aria-label="Toggle Search"
-                trigger={
-                  <WithTooltip tip="Search" position="bottom">
-                    <div className="button">
-                      <Icon name="solid-search" />
-                    </div>
-                  </WithTooltip>
-                  }
-              >
-                <div className="input">
-                  <Icon name="solid-search" />
-                  <input
-                    ref={searchInputRef}
-                    type="text"
-                    placeholder="Search products"
-                    value={query ?? ""}
-                    onChange={(evt) => setQuery(evt.target.value)}
-                  />
-                </div>
-              </Popover>
-            ): null
-          }
+          {products.length > 0 ? (
+            <Popover
+              open={isSearchPopoverOpen}
+              onToggle={setIsSearchPopoverOpen}
+              aria-label="Toggle Search"
+              trigger={
+                <WithTooltip tip="Search" position="bottom">
+                  <div className="button">
+                    <Icon name="solid-search" />
+                  </div>
+                </WithTooltip>
+              }
+            >
+              <div className="input">
+                <Icon name="solid-search" />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Search products"
+                  value={query ?? ""}
+                  onChange={(evt) => setQuery(evt.target.value)}
+                />
+              </div>
+            </Popover>
+          ) : null}
 
           <NavigationButton href={Routes.new_product_path()} disabled={!canCreateProduct} color="accent">
             New product
